@@ -156,7 +156,7 @@ export default function NavBar() {
     sx={{ 
       display: 'flex', 
       flexDirection: 'row', 
-      height: '50vh',
+      height: '60px',
     
       }}>
         <div>
