@@ -6,7 +6,7 @@ import background from '../../../assets/Background1.jpg'; // adjust the path to 
 const Section = styled(Box)(({ theme }) => ({
   background: `url(${background}) no-repeat center center/cover`,
   [theme.breakpoints.up('xs')]: {
-    height: '660w'
+    height: '60w'
   },
   [theme.breakpoints.up('sm')]: {
     height: '40vw'
