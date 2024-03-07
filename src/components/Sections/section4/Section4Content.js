@@ -32,8 +32,8 @@ export  const data = [
     },
     {
         image: photo5, 
-        title: 'Safety tripping', 
-        description: 'Shijoni emocionin e kayak dhe rafting në lumin Vjosa, duke garantuar sigurinë më të lartë me udhëheqës të përvojuar. Filloni udhëtimin me një shpirt aventurier dhe përjetoni adrenalinën e valëve me një ekip të përkushtuar për sigurinë tuaj. Sfidojeni veten në ujërat e këtij lumi spektakolar, duke ndjekur udhëzimet e udhëheqësve të trajnuar. Fotografoni këto momente të sigurisë dhe kënaquni me aventurën pa stres. Në këtë udhëtim të sigurt, emocionohuni nga rrëfimet e udhëheqësve dhe kapni çdo detaj të kësaj eksperience të jashtëzakonshme.'
+        title: 'Siguria e udhëtimeve me kayak dhe rafting në lumin Vjosa', 
+        description: 'Shijoni emocionin e kayak dhe rafting në lumin Vjosa, duke garantuar sigurinë më të lartë me udhëheqës të përvojuar. Filloni udhëtimin me një ekip të përkushtuar për sigurinë tuaj. Sfidojeni veten në ujërat e këtij lumi spektakolar, duke ndjekur udhëzimet e udhëheqësve të trajnuar. Fotografoni këto momente të sigurisë dhe kënaquni me aventurën pa stres. Në këtë udhëtim të sigurt, emocionohuni nga rrëfimet e udhëheqësve dhe kapni çdo detaj të kësaj eksperience të jashtëzakonshme.'
     }
 
 ]

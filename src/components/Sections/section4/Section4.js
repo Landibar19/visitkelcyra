@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, makeStyles } from '@material-ui/core';
+import { Box, Grid, Typography, makeStyles } from '@material-ui/core';
 import {data} from './Section4Content';
 
 const useStyles = makeStyles({
@@ -32,7 +32,8 @@ const Section4 = () => {
   return (
     <div>
       {data.map((item, index) => (
-        <Grid container spacing={3} key={index} className={classes.root}>
+        <Box sx={{paddingLeft: '5%', paddingRight: '5%', paddingTop:2}}>
+           <Grid container spacing={3} key={index} className={classes.root}>
           <Grid item xs={12} sm={6}>
             <img src={item.image} alt={item.title} className={classes.image} />
           </Grid>
@@ -41,6 +42,8 @@ const Section4 = () => {
             <Typography variant="body1">{item.description}</Typography>
           </Grid>
         </Grid>
+        </Box>
+       
       ))}
     </div>
   );
