@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import ShowMoreText from 'react-show-more-text';
 
 import images from './Section3Content';
 import { Box } from '@mui/system';
@@ -9,90 +10,81 @@ import { Typography } from '@mui/material';
 
 const useStyles = makeStyles({
     root: {
-    boxShadow: '0 3px 5px 2px rgba(144, 238, 154, 3)',
-      paddingTop: '20px',
-      borderRadius: '15px',
-      backgroundColor: '#fff',
-      width: '85%',
-      margin: '0 auto',
+        boxShadow: '0 3px 5px 2px rgba(144, 238, 154, 3)',
+        paddingTop: '20px',
+        borderRadius: '15px',
+        backgroundColor: '#fff',
+        width: '85%',
+        margin: '0 auto',
+        paddingBottom: '20px',
     },
     actionArea: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     media: {
-      height: '250px',
-      width: '100%',
-      objectFit: 'cover',
-      borderRadius: '10px',
+        height: '250px',
+        width: '100%',
+        objectFit: 'cover',
+        borderRadius: '10px',
     },
     content: {
-      marginTop: '10px',
+        marginTop: '10px',
     },
     title: {
         fontSize: '20px',
         fontWeight: 'bold',
-      },
-      description: {
+    },
+    description: {
         marginTop: '10px',
         fontSize: '16px',
-      },
-      button: {
-        margin: '10px',
-        padding: '10px 20px',
-        backgroundColor: '#3f51b5',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '5px',
+    },
+    'show-more-less': {
+        color: 'blue',
         cursor: 'pointer',
-        '&:hover': {
-          backgroundColor: '#303f9f',
-        },
-      },
-    });
+        textDecoration: 'none',
+    },
+});
 
 export default function MediaCard() {
-  const classes = useStyles();
-  const matches = useMediaQuery('(min-width:600px)');
-  const [showMore, setShowMore] = useState(Array(images.length).fill(false));
+    const classes = useStyles();
+    const matches = useMediaQuery('(min-width:600px)');
 
-  const toggleShowMore = index => {
-    setShowMore(prevShowMore => {
-      const newShowMore = [...prevShowMore];
-      newShowMore[index] = !newShowMore[index];
-      return newShowMore;
-    });
-  };
-
-  return (
-    <Box p={3}>
-        <Typography 
-        variant="h2" 
-        align="center"
-         gutterBottom>
-            Eksploro vendet me te bukura te Kelcyres
-        </Typography>
-        <Grid container  spacing={3}>
-        {images.slice(0, matches ? 6 : 6).map((image, index) => (
-            <Grid item xs={12} sm={4} key={index}>
-            <div className={classes.root}>
-                <div className={classes.actionArea}>
-                    <img className={classes.media} src={image.image} alt={image.title} />
-                    <div className={classes.content}>
-                    <h2 className={classes.title}>{image.title}</h2>
-                    <p className={classes.description}>
-                        {showMore[index] ? image.description : `${image.description.substring(0, 100)}...`}
-                    </p>
+    return (
+        <Box p={3}>
+            <Typography 
+            variant="h2" 
+            align="center"
+            gutterBottom>
+                Eksploro vendet me te bukura te Kelcyres
+            </Typography>
+            <Grid container  spacing={3}>
+            {images.slice(0, matches ? 6 : 6).map((image, index) => (
+                <Grid item xs={12} sm={4} key={index}>
+                <div className={classes.root}>
+                    <div className={classes.actionArea}>
+                        <img className={classes.media} src={image.image} alt={image.title} />
+                        <div className={classes.content}>
+                        <h2 className={classes.title}>{image.title}</h2>
+                        <ShowMoreText
+                            lines={3}
+                            more='Show more'
+                            less='Show less'
+                            className={classes.description}
+                            anchorClass={classes['show-more-less']}
+                            expanded={false}
+                            width={280}
+                            truncatedEndingComponent={"..."}
+                        >
+                            {image.description}
+                        </ShowMoreText>
+                        </div>
                     </div>
-                </div>
-                <button className={classes.button} onClick={() => toggleShowMore(index)}>
-                    {showMore[index] ? 'Show Less' : 'Show More'}
-                </button>
-                </div>
+                    </div>
+                </Grid>
+            ))}
             </Grid>
-        ))}
-        </Grid>
-    </Box>
-  );
+        </Box>
+    );
 }
