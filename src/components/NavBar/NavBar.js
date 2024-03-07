@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -44,6 +44,7 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontSize: 16,
     fontFamily: [
       "Madimi One", 
       'sans-serif'
@@ -155,6 +156,7 @@ export default function NavBar() {
     sx={{ 
       display: 'flex', 
       flexDirection: 'row', 
+      height: '50vh',
     
       }}>
         <div>
@@ -185,13 +187,12 @@ export default function NavBar() {
             flexDirection: 'column',
             textAlign: 'center'}}>
           <div>
-            <Typography variant="h6" 
+            <Typography variant="h2" 
             component="div" 
             sx={{
               color: 'rgba(254,254,253,255)', 
-              fontSize:{xs:45,sm: 65,
-                paddingLeft: '20px',
-              }}}>
+              paddingLeft: '20px',
+              }}>
               Visit Kelcyra
             </Typography>
           </div>
