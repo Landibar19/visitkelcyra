@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,7 +20,6 @@ import { menuItems } from './MenuItems';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { ThemeProvider, createTheme} from '@mui/material';
 import logo from '../../assets/logo.png';
-import Backdrop from '@mui/material/Backdrop';
 import Fade from '@mui/material/Fade';
 
 
@@ -56,8 +55,6 @@ export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSubItems, setOpenSubItems] = useState({});
-  const open = Boolean(anchorEl);
-  const timer = useRef();
   const [openItems, setOpenItems] = useState({});
   const [activeItem, setActiveItem] = useState(null);
 
