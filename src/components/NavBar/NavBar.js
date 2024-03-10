@@ -167,7 +167,7 @@ export default function NavBar() {
 
   return (
   <ThemeProvider theme={theme}>
-    <AppBar position="static" color='primary'> 
+    <AppBar position="static" color='primary' sx={{height: '100%'}}> 
     <Toolbar 
     sx={{ 
       display: 'flex', 
