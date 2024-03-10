@@ -158,8 +158,14 @@ export default function NavBar() {
 
   return (
   <ThemeProvider theme={theme}>
-    <AppBar position="static"> 
-    <Toolbar>
+    <AppBar position="static" color='primary'> 
+    <Toolbar 
+    sx={{ 
+      display: 'flex', 
+      flexDirection: 'row', 
+      height: '40vh',
+    
+      }}>
         <div>
           <img src={logo} alt='' 
           style={{
