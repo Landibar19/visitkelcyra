@@ -88,7 +88,7 @@ export default function NavBar() {
   const handleSubItems = (item) => {
     setOpenSubItems((prev) => ({ ...prev, [item]: !prev[item] }));
   };
-  const isMobileView = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobileView = useMediaQuery(theme.breakpoints.down('sm'));
   
   const Div = styled(Typography)(() => ({
     fontFamily: ["Madimi One", 'sans-serif'].join(','),
