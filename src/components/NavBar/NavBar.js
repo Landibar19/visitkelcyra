@@ -163,7 +163,7 @@ export default function NavBar() {
     sx={{ 
       display: 'flex', 
       flexDirection: 'row', 
-      height: isMobileView ? '20vh' : '41vh',
+      height: 'auto',
     
       }}>
         <div>
