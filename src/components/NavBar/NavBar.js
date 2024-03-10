@@ -18,9 +18,10 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { menuItems } from './MenuItems';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { ThemeProvider, createTheme} from '@mui/material';
+import { ThemeProvider, createTheme} from '@mui/material/styles';
 import logo from '../../assets/logo.png';
 import Fade from '@mui/material/Fade';
+import { styled } from '@material-ui/core';
 
 
 const theme = createTheme({
@@ -34,6 +35,12 @@ const theme = createTheme({
         },
       },
     },
+    MuiToolbar: {
+      root: {
+        display: 'flex', 
+        flexDirection: 'row', 
+      }
+    }
   },
   palette: {
     primary: {
@@ -42,13 +49,6 @@ const theme = createTheme({
     secondary: {
       main: 'rgba(255,255,255,255)',
     },
-  },
-  typography: {
-    fontSize: 16,
-    fontFamily: [
-      "Madimi One", 
-      'sans-serif'
-    ].join(','),
   }
 });
 
@@ -80,9 +80,17 @@ export default function NavBar() {
     setOpenSubItems((prev) => ({ ...prev, [item]: !prev[item] }));
   };
   const isMobileView = useMediaQuery(theme.breakpoints.down('sm'));
+  
+  const Div = styled(Typography)(() => ({
+    fontFamily: ["Madimi One", 'sans-serif'].join(','),
+    fontSize: isMobileView ? 30 : 45,
+    color: 'white',
+    
+    paddingLeft: '20px',
+    paddingTop: '2%'
+  }));
 
   const drawer = (
-    <ThemeProvider theme={theme}>
       <div>
         {isMobileView ? null : Object.keys(menuItems).map((item) => (
           <React.Fragment key={item}>
@@ -112,7 +120,7 @@ export default function NavBar() {
                   horizontal: 'center',
                 }}
               >
-                <Box sx={{ p: 2 }}>
+                <Box>
                   {menuItems[item].map((subItem) => (
                     <MenuItem key={subItem.name} onClick={handleClose} component={Link} to={subItem.link}>
                       {subItem.name}
@@ -124,7 +132,6 @@ export default function NavBar() {
           </React.Fragment>
         ))}
       </div>
-    </ThemeProvider>
   );
  
   const mobileDrawer = (
@@ -151,22 +158,15 @@ export default function NavBar() {
 
   return (
   <ThemeProvider theme={theme}>
-    <AppBar position="static" color='primary'> 
-    <Toolbar 
-    sx={{ 
-      display: 'flex', 
-      flexDirection: 'row', 
-      height: '50vh',
-    
-      }}>
+    <AppBar position="static"> 
+    <Toolbar>
         <div>
           <img src={logo} alt='' 
           style={{
-            width: '100%',
-            maxWidth:'20vw',
+            width: isMobileView ? '25%': '15%',
             position: 'absolute',
              left: "-3%", 
-             top: '-1%'
+             top: '-4%'
              }}/>
         </div>
         
@@ -181,35 +181,32 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
         )}
-      <Toolbar 
+      <Box 
           sx={{ 
             display: 'flex', 
             flexDirection: 'column',
-            textAlign: 'center'}}>
+            textAlign: 'center',
+            width: '90%',
+            height: isMobileView ? '20vh' : '41vh'
+            }}>
           <div>
-            <Typography variant="h2" 
-            component="div" 
-            sx={{
-              color: 'rgba(254,254,253,255)', 
-              paddingLeft: '20px',
-              }}>
+            <Div>
               Visit Kelcyra
-            </Typography>
+            </Div>
           </div>
           
           <div 
-          style = 
-          {{
+          style = {{
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            flex: 2 ,
+            padding: '2%'
           }}
           >
             {drawer}
           </div>
           
-      </Toolbar> 
+      </Box> 
     </Toolbar>
     
     <nav>
