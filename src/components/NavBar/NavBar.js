@@ -167,18 +167,18 @@ export default function NavBar() {
 
   return (
   <ThemeProvider theme={theme}>
-    <AppBar position="static" color='primary' sx={{height: '100%'}}> 
+    <AppBar position="static" color='primary'> 
     <Toolbar 
     sx={{ 
       display: 'flex', 
       flexDirection: 'row', 
-     height: '100%',
+     height: 'auto',
     
       }}>
         <div>
           <img src={logo} alt='' 
           style={{
-            width: isMobileView ? '25%': '15%',
+            width: isMobileView ? '17vh': '15%',
             position: 'absolute',
              left: "-3%", 
              top: '-4%'
@@ -202,7 +202,7 @@ export default function NavBar() {
             flexDirection: 'column',
             textAlign: 'center',
             width: '90%',
-            height: isMobileView ? '20vh' : '41vh'
+            height: isMobileView ? '25vw' : 'auto'
             }}>
           <div>
             <Div>
