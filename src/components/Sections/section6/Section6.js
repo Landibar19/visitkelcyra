@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingLeft: '20px',
+    margin: '0 auto',
   },
   image: {
     width: '100%',

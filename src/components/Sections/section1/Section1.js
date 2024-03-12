@@ -18,6 +18,7 @@ const Section = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   position: 'relative',
   overflow: 'hidden',
+  padding: 3
 }));
 
 const Div = styled(Box)(({ theme }) => ({
