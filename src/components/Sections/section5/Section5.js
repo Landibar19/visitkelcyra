@@ -10,7 +10,12 @@ const useStyles = makeStyles({
   root: {
     width: '80%',
     margin: '0 auto',
-    textAlign: 'justify'
+    textAlign: 'justify',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+   
   },
   image: {
     borderRadius: '16px',

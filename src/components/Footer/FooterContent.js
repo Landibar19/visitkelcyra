@@ -2,12 +2,11 @@
 
 export const footerData = {
     column1: {
-      title: 'Emri i Kompanise',
+      title: 'Kelcyra Rafting Team',
       description: `Kelcyra Rafting Team është e përkushtuar për të ofruar aventura të pakrahasueshme në rafting,
         trekking dhe udhëtime, duke shfaqur bukurinë natyrore dhe pasurinë kulturore të këtij destinacioni 
         të mrekullueshëm. Nën udhëheqjen e udhëheqësve vendas, ne ofrojmë udhëtime të personalizuara në valët 
-        e lumit Vjosa. Për ata që dëshirojnë një udhëtim të qetë në mal,
-        oferta jonë e aventurave përshtatet për të gjitha nivelet e pasionuarve të natyrës.`
+        e lumit Vjosa. Për ata që dëshirojnë një udhëtim të qetë në mal, oferta jonë e aventurave përshtatet për të gjitha nivelet e pasionuarve të natyrës.`
     },
     column2: {
       title: 'Produkte',

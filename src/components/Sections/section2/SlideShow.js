@@ -8,7 +8,7 @@ import images from './Section2Content';
 const useStyles = makeStyles({
   root: {
     backgroundColor: 'rgba(144,179,25,255)',
-    width: '80%', 
+    width: '90%', 
     height: '60%',
     margin: '0 auto',
     color: '#fff',

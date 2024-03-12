@@ -10,8 +10,9 @@ const useStyles = makeStyles({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '2% auto',
+    margin: '0 auto',
     border: '5px solid rgba(144,179,25,255)',
+    borderRadius: '15px',
   },
   imageContainer: {
     width: '80%',
@@ -43,7 +44,7 @@ const Section4 = () => {
   return (
     <div>
     {data.map((item, index) => (
-      <Box key={index} sx={{paddingLeft: '5%', paddingRight: '5%', paddingTop:2}}>
+      <Box key={index} p={3}>
         <Grid container spacing={1}  className={classes.root} >
           <Grid item xs={12} sm={7} className={classes.imageContainer}>
             <img src={item.image} alt={item.title} className={classes.image} />

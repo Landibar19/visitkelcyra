@@ -8,14 +8,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(144,179,25,200)',
     color: 'white',
   },
-  gridItem: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    margin: '0 auto',
-    width: '90%'
-  },
   typographyItem:{
     display: 'flex',
     justifyContent: 'left',
@@ -28,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
    textAlign: 'left',
    alignItems: 'center'
   },
-  imageActive: {
-    opacity: 1,
-  }
 }));
 
 function Footer() {
@@ -41,15 +30,15 @@ function Footer() {
       <Box p={5}>
        <Grid container spacing={3} className={classes.gridContainer}>
         {Object.values(footerData).map((columnData, index) => (
-          <Grid item xs={6} sm={3} key={index}>
+          <Grid item xs={12} sm={3} key={index}>
             <Typography variant="h6" className={classes.typographyItem}>{columnData.title}</Typography>
             {columnData.description && (
-              <Typography variant="body2" className={classes.typographyItem}>
+              <Typography variant="body2" className={classes.typographyItem} component='div'>
                 <div dangerouslySetInnerHTML={{ __html: columnData.description.replace(/\n/g, '<br />') }} />
               </Typography>
             )}
             {columnData.subtitles && columnData.subtitles.map((subtitle, index) => (
-              <Typography variant="subtitle1" key={index} pt={2} className={classes.typographySubItem}>{subtitle}</Typography>
+              <Typography variant="subtitle1" key={index} className={classes.typographySubItem}>{subtitle}</Typography>
             ))}
           </Grid>
         ))}

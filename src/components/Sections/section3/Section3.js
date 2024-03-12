@@ -11,12 +11,11 @@ import { Typography } from '@mui/material';
 const useStyles = makeStyles({
     root: {
         boxShadow: '0 3px 5px 2px rgba(144, 238, 154, 3)',
-        paddingTop: '20px',
+        padding: 3,
         borderRadius: '15px',
         backgroundColor: '#fff',
-        width: '85%',
         margin: '0 auto',
-        paddingBottom: '20px',
+      
     },
     actionArea: {
         display: 'flex',
@@ -54,7 +53,7 @@ export default function MediaCard() {
     return (
         <Box p={3}>
             <Typography 
-            variant="h2" 
+            variant="h5" 
             align="center"
             gutterBottom>
                 Eksploro vendet me te bukura te Kelcyres
