@@ -25,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: '100%',
-    maxWidth: '650px',
-    minWidth: '300px',
+    maxWidth: '640px',
     transition: 'opacity 2s',
     opacity: 0,
   },
