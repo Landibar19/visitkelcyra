@@ -14,8 +14,8 @@ const useStyles = makeStyles({
     color: '#fff',
     fontSize: '20px',
     '& .image-gallery-slide img': {
-      width: '80%',
-      height: '70%',
+      width: '70%',
+      height: '60%',
       objectFit: 'cover',
       paddingTop: '2%'
     },
