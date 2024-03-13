@@ -214,8 +214,7 @@ export default function NavBar() {
           style = {{
             display: 'flex', 
             justifyContent: 'center', 
-            alignItems: 'center', 
-            padding: '2%'
+            alignItems: 'center',
           }}
           >
             {drawer}
