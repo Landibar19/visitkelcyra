@@ -9,6 +9,7 @@ const Section = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
   [theme.breakpoints.up('md')]: {
     flexDirection: 'row',
+    alignItems: 'center'
   },
   margin: '0 auto',
   padding: theme.spacing(3),
@@ -21,8 +22,10 @@ const Div = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   textAlign:'justify',
-  padding: theme.spacing(1),
+  padding: theme.spacing(2),
   margin: '0 auto',
+  [theme.breakpoints.up('md')]: {
+    width: '50%'}
 }));
 
 function Section2() {
