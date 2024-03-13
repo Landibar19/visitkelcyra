@@ -191,7 +191,7 @@ export default function NavBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            style={{ position: 'fixed', top: '5%' ,zIndex: 1000}}
+            style={{ position: 'fixed', top: '5%', paddingRight: "10px" ,zIndex: 1000}}
           >
             <MenuIcon />
           </IconButton>
@@ -202,7 +202,7 @@ export default function NavBar() {
             flexDirection: 'column',
             textAlign: 'center',
             width: '90%',
-            height: isMobileView ? '25vw' : 'auto'
+            height: isMobileView ? '25vw' : '41vh'
             }}>
           <div>
             <Div>
