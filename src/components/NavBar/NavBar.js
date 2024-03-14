@@ -191,7 +191,7 @@ export default function NavBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            style={{ position: 'fixed', top: '5%', right: "10px" ,zIndex: 1000}}
+            style={{ position: 'absolute', top: '5%', right:0 ,zIndex: 1000}}
           >
             <MenuIcon />
           </IconButton>

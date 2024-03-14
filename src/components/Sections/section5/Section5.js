@@ -6,25 +6,43 @@ import { Typography, Box } from '@mui/material';
 import {Section5Content} from './Section5Content';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: '80%',
+   width: '90%',
     margin: '0 auto',
     textAlign: 'justify',
     alignItems: 'center',
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
+    padding: 0,
    
+  },
+  typography: {
+    wordWrap: 'break-word',
+    margin: 0,
+    padding: 0, 
   },
   image: {
     borderRadius: '16px',
+    objectFit: 'cover',
+    width: '100%',
+    height: '100%',
   },
   imageContainer: {
     width: '90%',
     height: '70%',
-    margin: '2% auto',
+    margin: '0 auto',
     position: 'relative',
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+      height: 'auto',
+    },
+  },
+  carousel: { 
+    margin: 0,
+    padding: 4,
+    width:'90%'
   },
   label: {
     position: 'absolute',
@@ -37,7 +55,7 @@ const useStyles = makeStyles({
     fontFamily: 'Madimi One, sans-serif',
     fontSize: '2.5vw',
   }
-});
+}));
 
 const Section5 = () => {
   const classes = useStyles();
@@ -47,11 +65,11 @@ const Section5 = () => {
   const {data, description} = Section5Content;
   return (
     <div className={classes.root}>
-      <Typography variant="h4">Akomodimi dhe gastronomia</Typography>
-      <Typography variant="body1">
+      <Typography variant="h4" className={classes.typography}>Akomodimi dhe gastronomia</Typography>
+      <Typography variant="body1"className={classes.typography}>
         {description}
       </Typography>
-      <Carousel renderThumbs={renderThumb}>
+      <Carousel renderThumbs={renderThumb} className={classes.carousel}>
         
         {data.map((item , index) => (
           <div key={index} className={classes.imageContainer}>

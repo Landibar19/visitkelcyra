@@ -6,7 +6,6 @@ import {Section6Content} from './Section6Content';
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
     position: 'relative',
-    padding: theme.spacing(2),
     border: '8px solid rgba(144,179,25,200)',
   },
   gridItem: {
@@ -60,7 +59,7 @@ const Section6 = () => {
     }
   }, [opacity, currentIndex, data.length]);
 return(
-  <Container maxWidth="lg">
+  <Container>
       <div className={classes.div} style={{flexDirection: isMobile ? 'column' : 'row'}}>
         <Box sx={{
           display: 'flex',
@@ -68,8 +67,6 @@ return(
           flexDirection: 'column',
           alignItems: 'center',
           border: '8px solid rgba(144,179,25,200)',
-          padding: '3%',
-          gap: '8%',
         }}>
           <Typography variant='h5' style={{fontWeight: 'bold'}}>
             {title}
