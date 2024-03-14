@@ -202,7 +202,7 @@ export default function NavBar() {
             flexDirection: 'column',
             textAlign: 'center',
             width: '90%',
-            height: isMobileView ? '25vw' : '41vh'
+            height: isMobileView ? '25vw' : 'auto'
             }}>
           <div>
             <Div>
