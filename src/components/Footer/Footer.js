@@ -27,7 +27,7 @@ function Footer() {
   const classes = useStyles();
   return (
     <footer>
-      <Box p={5}>
+      <Box p={2}>
        <Grid container spacing={3} className={classes.gridContainer}>
         {Object.values(footerData).map((columnData, index) => (
           <Grid item xs={12} sm={3} key={index}>
