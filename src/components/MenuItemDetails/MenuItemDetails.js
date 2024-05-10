@@ -6,6 +6,7 @@ import { fetchMenuItems } from '../../redux/thunks/menuitemThunk';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
+
 function MenuItemDetails() {
   const { link, detailLink } = useParams();
 
@@ -17,7 +18,7 @@ function MenuItemDetails() {
 
   const menuItem = menuItems.flatMap(item => item.menuitems).find(item => item.link === link);
   const detailItem = menuItem?.menuitemdetail.find(detail => detail.link === detailLink);
-  
+  console.log(detailItem)
 
   
   useEffect(() => {
@@ -35,7 +36,7 @@ function MenuItemDetails() {
   return (
     <Grid container spacing={3} p={5} sx={{display:'flex', flexDirection: 'row'}}>
       {detailItem && 
-        <Grid item xs={12} sm={6} md={4} sx={{alignItems: 'center', justifyContent: 'center', p:2, width:'100%', height:'100%'}}>
+        <Grid item xs={12} sm={6}  sx={{alignItems: 'center', justifyContent: 'center', p:2, width:'100%', height:'100%'}}>
           <Typography variant="h4" mb={6}>{detailItem.title}</Typography>
           {detailItem.photos && detailItem.photos.data && detailItem.photos.data.length > 0 
             ? <>
@@ -69,6 +70,11 @@ function MenuItemDetails() {
           }
         </Grid>
       }
+      <Grid item xs={12} sm={6} sx={{padding: 4, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+  <Typography sx={{textAlign:'justify'}}>
+    {detailItem.otherdescription}
+  </Typography>
+</Grid>
     </Grid>
   );
 }
