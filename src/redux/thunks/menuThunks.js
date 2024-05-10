@@ -2,7 +2,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchMenus = createAsyncThunk('menus/fetchMenus', async (query) => {
   try {
-    const response = await fetch(`http://localhost:1337/api/menus?query=${query}`);
+    const url = query 
+    ? `https://visitkelcyrastrapi.onrender.com/api/menus?query=${query}` 
+    : 'https://visitkelcyrastrapi.onrender.com/api/menus';
+  const response = await fetch(url);
+    console.log(response)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

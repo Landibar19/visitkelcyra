@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchMenuItems = createAsyncThunk('menuItems/fetchMenuItems', async () => {
   try {
-    const response = await fetch('http://localhost:1337/api/menus');
+    const response = await fetch('https://visitkelcyrastrapi.onrender.com/api/menus');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

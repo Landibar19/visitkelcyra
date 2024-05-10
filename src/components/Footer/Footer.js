@@ -4,9 +4,8 @@ import { Box, makeStyles } from '@material-ui/core';
 import {footerData} from './FooterContent';
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    position: 'relative',
     backgroundColor: 'rgba(144,179,25,200)',
-    color: 'white',
+    color: 'white',marginTop: '8%'
   },
   typographyItem:{
     display: 'flex',
@@ -20,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
    textAlign: 'left',
    alignItems: 'center'
   },
+
 }));
 
 function Footer() {
@@ -28,9 +28,9 @@ function Footer() {
   return (
     <footer>
       <Box p={2}>
-       <Grid container spacing={3} className={classes.gridContainer}>
+       <Grid container spacing={2} className={classes.gridContainer}>
         {Object.values(footerData).map((columnData, index) => (
-          <Grid item xs={12} sm={3} key={index}>
+          <Grid item xs={12} sm={4} md={3} key={index}>
             <Typography variant="h6" className={classes.typographyItem}>{columnData.title}</Typography>
             {columnData.description && (
               <Typography variant="body2" className={classes.typographyItem} component='div'>

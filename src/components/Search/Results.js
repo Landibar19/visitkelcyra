@@ -10,8 +10,8 @@ export default function Results() {
   const menus = useSelector(state => state.menus.items);
 
   useEffect(() => {
-    dispatch(fetchMenus());
-  }, [dispatch]);
+    dispatch(fetchMenus(query));
+  }, [dispatch, query]);
 
   if (!menus || !menus.data || menus.data.length === 0) {
     return <p>No results found</p>;

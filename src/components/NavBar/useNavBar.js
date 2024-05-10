@@ -33,6 +33,7 @@ export default function useNavBar() {
   const handleClose = () => {
     setOpenItems({});
     setAnchorEl(null);
+    setMobileOpen(false)
   };
 
   return {

@@ -47,16 +47,18 @@ const Section6 = () => {
     const timer = setInterval(() => {
       setOpacity(0);
     }, 10000);
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); 
   }, []);
-
+  
   useEffect(() => {
+    let timeoutId;
     if (opacity === 0) {
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setCurrentIndex((currentIndex + 1) % data.length);
         setOpacity(1);
       }, 2000);
     }
+    return () => clearTimeout(timeoutId); 
   }, [opacity, currentIndex, data.length]);
 return(
   <Container>
